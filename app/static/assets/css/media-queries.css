@@ -1,0 +1,297 @@
+﻿/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .navbar-collapse {
+        border-color: transparent !important;
+    }
+
+    .navbar-nav li a {
+        margin: 0 30%;
+    }
+
+    .navbar-brand img {
+        width: 40px;
+        position: relative;
+        top: -9px;
+    }
+
+    .navbar-brand span {
+        font-size: 20px !important;
+        position: relative;
+    / / top: - 12 px;
+    }
+
+    .dropdown {
+        margin: 0 auto !important;
+        float: none !important;
+        text-align: center;
+    }
+
+    .dropdown-menu {
+        right: 0 !important;
+        left: 0 !important;
+        width: 80px;
+        top: -60px;
+        float: none !important;
+        margin: 0 auto !important;
+    }
+
+    .dropdown {
+        margin: 0 auto !important;
+        float: none !important;
+        text-align: center;
+    }
+
+    .dropdown-menu {
+        right: 0 !important;
+        left: 0 !important;
+        width: 80px;
+        top: -60px;
+        float: none !important;
+        margin: 0 auto !important;
+    }
+
+    .row {
+        text-align: center;
+    }
+
+    #about-main .row h1 {
+        font-size: 30px !important;
+        margin-top: 0 !important;
+    }
+
+    .about-description {
+        padding: 0 1%;
+    }
+
+    #about-main .btn {
+        margin: 20px 0 20px !important;
+    }
+
+    .jumbotron h1 {
+        font-size: 30px;
+    }
+
+    #about .jumbotron, #what-we-do h1, #team h1 {
+        padding-top: 80px !important;
+    }
+
+    .hr {
+        margin-top: 50px;
+    }
+
+    #what-we-do h1, #team h1 {
+        font-size: 30px;
+    }
+
+    .advantage {
+        height: 180px;
+    }
+
+    .advantage img {
+        width: 50px;
+    }
+
+    #participate {
+        background: url(../images/bg-section-participate.png) no-repeat 0% 100% scroll;
+        background-size: 170px auto;
+    }
+
+    #team .row div {
+        margin-bottom: 50px;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .navbar-collapse {
+        border-color: transparent !important;
+    }
+
+    .navbar-nav li a {
+        margin: 0 30%;
+    }
+
+    .dropdown {
+        margin: 0 auto !important;
+        float: none !important;
+        text-align: center;
+    }
+
+    .dropdown-menu {
+        right: 0 !important;
+        left: 0 !important;
+        width: 80px;
+        top: -60px;
+        float: none !important;
+        margin: 0 auto !important;
+    }
+
+    .dropdown {
+        margin: 0 auto !important;
+        float: none !important;
+        text-align: center;
+    }
+
+    .dropdown-menu {
+        right: 0 !important;
+        left: 0 !important;
+        width: 80px;
+        top: -60px;
+        float: none !important;
+        margin: 0 auto !important;
+    }
+
+    .row {
+        text-align: center;
+    }
+
+    .about-description {
+        padding: 0 10%;
+    }
+
+    #about-main .row h1, .jumbotron h1, #what-we-do h1, #team h1 {
+        font-size: 46px !important;
+    }
+
+    #what-we-do h1, #team h1 {
+        padding-top: 80px !important;
+    }
+
+    .about-description {
+        font-size: 26px !important;
+        line-height: 3rem;
+    }
+
+    .main-buttons {
+        padding: 0 30% !important;
+    }
+
+    .conditions {
+        margin: 0;
+    }
+
+    .jumbotron p {
+        padding: 10px 70px;
+    }
+
+    .advantage {
+        height: 180px;
+    }
+
+    #participate {
+        background-size: 200px auto;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .navbar-nav li a {
+        margin: 0 23px;
+    }
+
+    .dropdown {
+        margin-left: 20px !important;
+        float: right !important;
+    }
+
+    .dropdown-menu {
+        right: 0 !important;
+        left: 0 !important;
+        top: 100%;
+        float: none !important;
+        margin: 2px 0 0 !important;
+    }
+
+    .dropdown {
+        margin-left: 20px !important;
+        float: right !important;
+    }
+
+    .dropdown-menu {
+        right: 0 !important;
+        left: 0 !important;
+        top: 100%;
+        float: none !important;
+        margin: 2px 0 0 !important;
+    }
+
+    .row {
+        text-align: left;
+    }
+
+    #about-main .row h1 {
+        font-size: 54px !important;
+        margin-bottom: 20px !important;
+    }
+
+    .about-description {
+        font-size: 30px !important;
+        line-height: 3.5rem;
+        padding: 0;
+    }
+
+    .main-buttons {
+        padding: 0 15px !important;;
+    }
+
+    #about .jumbotron, #what-we-do h1 {
+        padding-top: 120px !important;
+    }
+
+    #what-we-do h1, #team h1 {
+        padding-top: 0 !important;
+    }
+
+    .jumbotron p {
+        padding: 30px 70px;
+    }
+
+    #participate {
+        background-size: 300px auto;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+    #about-main .row h1 {
+        font-size: 54px !important;
+        margin-bottom: 20px !important;
+        padding-right: 50px !important;
+    }
+
+    .about-description {
+        font-size: 30px !important;
+        line-height: 3.8rem;
+        padding-right: 50px !important;
+    }
+
+    .main-buttons {
+        padding: 0 1% !important;
+    }
+
+    .conditions {
+        margin: 20px -30px;
+    }
+
+    .jumbotron {
+        padding-right: 15% !important;
+        padding-left: 15% !important;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    #about-main .row h1 {
+        font-size: 60px !important;
+        line-height: 6rem;
+    }
+
+    .main-buttons {
+        padding: 0 3% !important;
+    }
+
+    #participate {
+        background: url(../images/bg-section-participate.png) no-repeat 10% 100% scroll;
+    }
+}

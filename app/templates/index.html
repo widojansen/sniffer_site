@@ -1,0 +1,177 @@
+<link rel="stylesheet" href="../static/assets/css/main.css">{% extends 'layouts/layout.html' %}
+
+{% block title %}
+{{ config['PUBLIC_CONFIG'].site.title }}
+{% endblock %}
+
+{% block styles %}
+{{ super() }}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='assets/css/main.css') }}"/>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='assets/css/media-queries.css') }}"/>
+{% endblock %}
+
+{% block content %}
+<header>
+    <!--Navigation-->
+    <nav class="navbar navbar-default navbar-fixed-top" id="main-top-navbar">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-top">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#about-main"><!--<img
+                        src="{{ url_for('static', filename='assets/images/logo.png') }}">--><span>{{
+                    config['PUBLIC_CONFIG'].site.title }}</span></a>
+            </div>
+            <div class="navbar-collapse collapse navbar-right" id="navbar-top">
+                <ul class="nav navbar-nav">
+                    <li><a href="#about">{% trans %}About{% endtrans %}</a></li>
+                    <li><a href="#what-we-do">{% trans %}What we do{% endtrans %}</a></li>
+                    <li><a href="#participate"><b>{% trans %}Participate{% endtrans %}</b></a></li>
+                    <li><a href="#team">{% trans %}Team{% endtrans %}</a></li>
+                    <li><a href="#contacts">{% trans %}Contacts{% endtrans %}</a></li>
+                </ul>
+                <div class="dropdown pull-right">
+                    <a class="btn btn-default" data-toggle="dropdown">{% trans %}Language{% endtrans %} <b
+                            class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu">
+                        {% for language in languages %}
+                        <li>
+                            <a href="{{ url_for('home.set_language', language=language[0]) }}">{{ language[1] }}</a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <!--Section About and buttons 'sign in', 'register'-->
+    <section id="about-main" class="vertical-align">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-xs-12 col-sm-8 col-md-7">
+                    <h1>We believe in our founders</h1>
+                    <p class="about-description">We help to develop, advise and invest in the most promising projects.
+                        If you have cool ideas - you are welcome!</p>
+                </div>
+                <div class="col-xs-12 col-sm-4 col-md-3 main-buttons">
+                    <a class="btn btn-block" href="{{ url_for('home.register') }}"><span
+                            class="glyphicon glyphicon-user"></span> {% trans %}Register{% endtrans %}</a>
+                    <a class="btn btn-block" href="{{ url_for('home.login') }}"><span
+                            class="glyphicon glyphicon-log-in"></span> {% trans %}Sign in{% endtrans %}</a>
+                    <p class="conditions text-center">By clicking “Register”, you agree to our <a
+                            href="{{ url_for('home.term_of_use') }}">Term
+                        of use</a> and <a href="{{ url_for('home.private_policy') }}">Private policy</a>.</p>
+                </div>
+                <div class="col-md-1"></div>
+            </div>
+        </div>
+    </section>
+
+    <!--Section About-->
+    <section id="about" class="vertical-align">
+        <div class="container">
+            <div class="jumbotron text-center">
+                <h1>We are the team of developers, tech-enthusiasts and investors.</h1>
+                <p>We invite enterprising people who need support in launching their business project. From us -
+                    training, consulting, support and investment for the most promising
+                    projects. From you - the entrepreneurial spirit, business idea, a lot of effort and energy, and a
+                    willingness to follow through.</p>
+                <div class="hr">
+                    <hr>
+                    <img src="{{ url_for('static', filename='assets/images/rocket.png') }}">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Section What we do-->
+    <section id="what-we-do" class="vertical-align">
+        <div class="container">
+            <h1 class="text-center advantages-title">What we do</h1>
+            <div class="row">
+                <div class="col-md-4 col-lg-4 col-xs-6 text-center advantage">
+                    <img src="{{ url_for('static', filename='assets/images/icon-dev.png') }}">
+                    <h4>{% trans %}Help in developing{% endtrans %}</h4>
+                </div>
+                <div class="col-xs-6 col-md-4 col-lg-4 text-center advantage">
+                    <img src="{{ url_for('static', filename='assets/images/icon-training.png') }}">
+                    <h4>{% trans %}Counseling and training{% endtrans %}</h4>
+                </div>
+                <div class="col-xs-6 col-md-4 col-lg-4 text-center advantage">
+                    <img src="{{ url_for('static', filename='assets/images/icon-invest.png') }}">
+                    <h4>{% trans %}Investment of funds{% endtrans %}</h4>
+                </div>
+                <div class="col-xs-6 col-md-4 col-lg-4 text-center advantage">
+                    <img src="{{ url_for('static', filename='assets/images/icon-legal-aid.png') }}">
+                    <h4>{% trans %}Legal aid{% endtrans %}</h4>
+                </div>
+                <div class="col-xs-6 col-md-4 col-lg-4 text-center advantage">
+                    <img src="{{ url_for('static', filename='assets/images/icon-business.png') }}">
+                    <h4>{% trans %}Help in business matters{% endtrans %}</h4>
+                </div>
+                <div class="col-xs-6 col-md-4 col-lg-4 text-center advantage">
+                    <img src="{{ url_for('static', filename='assets/images/icon-start.png') }}">
+                    <h4>{% trans %}Help in starting and maintenance{% endtrans %}</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Section Participate-->
+    <section id="participate" class="vertical-align">
+        <div class="container">
+            <div class="jumbotron text-center">
+                <h1>Free participation</h1>
+                <p>We do not charge for our help. If you have an interesting project and want to show it to the world,
+                    and you are ready hard working, we are
+                    glad to invite you</p>
+                <a class="btn" href="{{ url_for('home.register') }}">{% trans %}Get started{% endtrans %}</a>
+            </div>
+        </div>
+    </section>
+
+    <!--Section Team-->
+    <section id="team" class="vertical-align text-center">
+        <div class="container text-center">
+            <h1>Our team</h1>
+            <div class="row">
+                <div class="col-sm-4 text-center">
+                    <img src="{{ url_for('static', filename='assets/images/team-member1.jpg') }}" alt="Image">
+                    <h3><b>Vasilij Ivanov</b></h3>
+                    <p class="post"><i>specialist...</i></p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam hendrerit, orci eu consectetur
+                        blandit, diam nunc tristique nibh, eu aliquam ipsum enim pellentesque arcu.</p>
+                </div>
+                <div class="col-sm-4 text-center">
+                    <img src="{{ url_for('static', filename='assets/images/team-member1.jpg') }}" alt="Image">
+                    <h3><b>Vasilij Ivanov</b></h3>
+                    <p class="post"><i>specialist...</i></p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam hendrerit, orci eu consectetur
+                        blandit, diam nunc tristique nibh, eu aliquam ipsum enim pellentesque arcu.</p>
+                </div>
+                <div class="col-sm-4 text-center">
+                    <img src="{{ url_for('static', filename='assets/images/team-member1.jpg') }}" alt="Image">
+                    <h3><b>Vasilij Ivanov</b></h3>
+                    <p class="post"><i>specialist...</i></p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam hendrerit, orci eu consectetur
+                        blandit, diam nunc tristique nibh, eu aliquam ipsum enim pellentesque arcu.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+<script src="{{ url_for('static', filename='assets/js/script.js') }}"></script>
+<script src="{{ url_for('static', filename='assets/js/jivosite.js') }}"></script>
+{% endblock %}
