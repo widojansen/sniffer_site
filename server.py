@@ -4,7 +4,7 @@ import argparse
 
 HOST = '127.0.0.1'
 PORT = 8080
-PROJECT_NAME = 'moneyflow'
+PROJECT_NAME = 'sniffer'
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(prog=PROJECT_NAME, usage='%(prog)s [options]')
