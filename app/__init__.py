@@ -4,6 +4,7 @@ from flask_login import LoginManager
 from flask_mail import Mail
 from flask_bootstrap import Bootstrap
 from flask_babel import Babel
+from cassandra.cluster import Cluster
 
 app = Flask(__name__)
 
@@ -16,6 +17,8 @@ bootstrap = Bootstrap(app)
 babel = Babel(app)
 db = MongoEngine(app)
 mail = Mail(app)
+_cassandra_cluster = Cluster(['127.0.0.1'])
+cassandra_session = _cassandra_cluster.connect('examples')
 
 login_manager = LoginManager(app)
 

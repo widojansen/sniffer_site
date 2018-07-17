@@ -4,7 +4,6 @@ from enum import IntEnum
 from flask_login import UserMixin
 
 from app import db
-import app.constants as constants
 from .settings import Settings
 
 
@@ -19,5 +18,6 @@ class User(UserMixin, db.Document):
     password = db.StringField(required=True)
     created_date = db.DateTimeField(default=datetime.now)
     status = db.IntField(default=Status.NO_ACTIVE)
+    scanners = db.ListField(db.StringField(), default=[])
 
     settings = db.EmbeddedDocumentField(Settings, default=Settings)

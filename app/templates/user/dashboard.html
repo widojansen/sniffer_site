@@ -24,8 +24,38 @@ Dashboard | {{ config['PUBLIC_CONFIG'].site.title }}
         </div>
     </div>
 </div>
+<div class="container well">
+    <div class="row">
+        <label class="col-md-4">Scanners:</label>
+        <div class="col-md-8">
+            <select class="form-control" id="state" name="state" required="">
+                {% for scanner in current_user.scanners %}
+                <option value="{{ scanner }}">{{ scanner }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <button type="submit" class="btn btn-info btn-xs" onclick="scanner_details()">Details</button>
+    </div>
+</div>
 {% endblock %}
 
 {% block scripts %}
 {{ super() }}
+<script>
+    function scanner_details() {
+        $.ajax({
+            url: "/user/scanners/details/sniffer_service",
+            type: "POST",
+            dataType: 'json',
+            data: {},
+            success: function (response) {
+                console.log(response);
+                window.location.reload();
+            },
+            error: function (error) {
+                console.error(error);
+            }
+        });
+    }
+</script>
 {% endblock %}

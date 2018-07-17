@@ -6,6 +6,7 @@ from flask_login import logout_user, login_required, current_user
 
 import app.constants as constants
 from app.user import user
+from app import cassandra_session
 
 from .forms import SettingsForm
 
@@ -75,3 +76,14 @@ def logout():
     session.pop('currency', None)
     logout_user()
     return redirect(url_for('home.start'))
+
+
+@user.route('/scanners/details/<scanner>', methods=['GET', 'POST'])
+@login_required
+def scanners_details(scanner):
+    rows = cassandra_session.execute("SELECT * FROM {0}".format(scanner))
+    for row in rows:
+        print(row)
+
+    response = {"scanner": scanner}
+    return jsonify(response), 200
